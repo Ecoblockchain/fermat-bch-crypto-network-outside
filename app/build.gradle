@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.fermat.integrationj"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:multidex:1.0.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile project(':bch')
+    compile files('jars/bitcoinj-core-0.13.6.jar')
+    compile files('jars/fermatj-core-0.13.6.jar')
+    compile 'com.google.api.client:google-api-client-repackaged-com-google-common-base:1.2.3-alpha'
+    compile 'com.google.guava:guava:19.0'
+    compile 'com.madgag.spongycastle:core:1.54.0.0'
+    compile 'org.apache.logging.log4j:log4j:2.6.2'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+}
