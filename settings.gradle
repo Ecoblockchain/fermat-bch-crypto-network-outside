@@ -1,0 +1,1 @@
+include ':app', ':fermat-api', ':fermat-bch-api', ':fermat-bch-plugin-crypto-network-fermat-bitdubai'

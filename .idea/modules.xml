@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FermatjSeparado.iml" filepath="$PROJECT_DIR$/FermatjSeparado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fermat-api/fermat-api.iml" filepath="$PROJECT_DIR$/fermat-api/fermat-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fermat-bch-api/fermat-bch-api.iml" filepath="$PROJECT_DIR$/fermat-bch-api/fermat-bch-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fermat-bch-plugin-crypto-network-fermat-bitdubai/fermat-bch-plugin-crypto-network-fermat-bitdubai.iml" filepath="$PROJECT_DIR$/fermat-bch-plugin-crypto-network-fermat-bitdubai/fermat-bch-plugin-crypto-network-fermat-bitdubai.iml" />
+    </modules>
+  </component>
+</project>
