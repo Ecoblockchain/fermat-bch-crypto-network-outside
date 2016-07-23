@@ -1,1 +1,2 @@
-include ':app', ':bch'
+
+include ':app', ':fermat-bch-plugin-crypto-network-fermat-bitdubai',':fermatj'

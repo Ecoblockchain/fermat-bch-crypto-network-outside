@@ -2,17 +2,18 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '21.1.2'
 
     defaultConfig {
-        applicationId "com.fermat.integrationj"
-        minSdkVersion 15
+        applicationId "com.fermat.fermatjseparado"
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
 
         // Enabling multidex support.
         multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -23,21 +24,66 @@ android {
 
     dexOptions {
         javaMaxHeapSize "4g"
+        incremental true
+        jumboMode = true
+        preDexLibraries = false
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+
+    packagingOptions {
+//        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+//        exclude 'META-INF/notice.txt'
+//        exclude 'META-INF/license.txt'
+
+        exclude 'lib/x86_64/darwin/libscrypt.dylib'
+        exclude 'lib/x86_64/freebsd/libscrypt.so'
+        exclude 'lib/x86_64/linux/libscrypt.so'
+        exclude 'org/bitcoinj/crypto/cacerts'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+}
+repositories {
+//    mavenLocal()
+    mavenCentral()
+    maven {
+        url "file:/${System.properties['user.home']}/artifacts"
+    }
+//    mavenRepo urls: localMavenRepo
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:multidex:1.0.1'
+//<<<<<<< HEAD
+//    compile 'com.android.support:multidex:1.0.1'
+//    testCompile 'junit:junit:4.12'
+//    compile 'com.android.support:appcompat-v7:23.4.0'
+//    compile 'com.android.support:design:23.4.0'
+//    compile project(':bch')
+//    compile files('jars/bitcoinj-core-0.13.6.jar')
+//    compile files('jars/fermatj-core-0.13.6.jar')
+//    compile 'com.google.api.client:google-api-client-repackaged-com-google-common-base:1.2.3-alpha'
+//    compile 'com.google.guava:guava:19.0'
+//    compile 'com.madgag.spongycastle:core:1.54.0.0'
+//    compile 'org.apache.logging.log4j:log4j:2.6.2'
+//    compile 'org.slf4j:slf4j-api:1.7.21'
+//=======
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile project(':bch')
-    compile files('jars/bitcoinj-core-0.13.6.jar')
-    compile files('jars/fermatj-core-0.13.6.jar')
-    compile 'com.google.api.client:google-api-client-repackaged-com-google-common-base:1.2.3-alpha'
-    compile 'com.google.guava:guava:19.0'
-    compile 'com.madgag.spongycastle:core:1.54.0.0'
-    compile 'org.apache.logging.log4j:log4j:2.6.2'
-    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile (project(':fermat-bch-plugin-crypto-network-fermat-bitdubai')){
+        exclude group: 'com.bitdubai.bch.api', module: 'fermat-bch-api'
+        exclude group: 'com.bitdubai.fermat.api', module: 'fermat-api'
+    }
 }

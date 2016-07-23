@@ -10,7 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/bch" />
+            <option value="$PROJECT_DIR$/fermat-bch-plugin-crypto-network-fermat-bitdubai" />
+            <option value="$PROJECT_DIR$/fermatj" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -3,6 +3,10 @@
 buildscript {
     repositories {
         jcenter()
+        mavenLocal()
+        maven {
+            url "file:/${System.properties['user.home']}/artifacts"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
@@ -18,6 +22,12 @@ allprojects {
     }
 }
 
+
 task clean(type: Delete) {
+    delete "file:/${project.rootDir}${File.separator}.idea${File.separator}libraries${File.separator}fermat_api_2_0_11.xml"
+    delete "file:/${project.rootDir}${File.separator}.idea${File.separator}libraries${File.separator}fermat_bch_api_4.xml"
+    delete "file:/${project.rootDir}${File.separator}.idea${File.separator}libraries${File.separator}fermat_bch_plugin_crypto_network_fermat_bitdubai_1.xml"
+
     delete rootProject.buildDir
+
 }

@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bch/bch.iml" filepath="$PROJECT_DIR$/bch/bch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fermat-bch-plugin-crypto-network-fermat-bitdubai/fermat-bch-plugin-crypto-network-fermat-bitdubai.iml" filepath="$PROJECT_DIR$/fermat-bch-plugin-crypto-network-fermat-bitdubai/fermat-bch-plugin-crypto-network-fermat-bitdubai.iml" />
       <module fileurl="file://$PROJECT_DIR$/fermatj.iml" filepath="$PROJECT_DIR$/fermatj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fermatj/fermatj-fermatj.iml" filepath="$PROJECT_DIR$/fermatj/fermatj-fermatj.iml" />
     </modules>
   </component>
 </project>
