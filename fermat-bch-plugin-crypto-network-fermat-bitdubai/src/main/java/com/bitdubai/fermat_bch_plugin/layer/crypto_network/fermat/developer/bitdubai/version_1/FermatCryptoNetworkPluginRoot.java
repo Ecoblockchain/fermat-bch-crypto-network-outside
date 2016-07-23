@@ -52,9 +52,15 @@ import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitd
 import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitdubai.version_1.structure.FermatCryptoNetworkManager;
 import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitdubai.version_1.util.FermatBlockchainProvider;
 
+import org.fermatj.core.Address;
 import org.fermatj.core.ECKey;
+import org.fermatj.core.NetworkParameters;
 import org.fermatj.core.Transaction;
+import org.fermatj.core.Wallet;
+import org.fermatj.params.MainNetParams;
+import org.fermatj.wallet.KeyChain;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.UUID;
@@ -162,10 +168,31 @@ public class FermatCryptoNetworkPluginRoot
         System.out.println("Fermat network started\n");
         System.out.println("***********************************\n");
 
+        testFermatNetwork();
+
         /**
          * nothing left to do.
          */
         this.serviceStatus = ServiceStatus.STARTED;
+    }
+
+
+    private void testFermatNetwork() {
+        Wallet wallet = new Wallet(MainNetParams.get());
+        ECKey key = wallet.currentKey(KeyChain.KeyPurpose.RECEIVE_FUNDS).decompress();
+        Address myAddress = key.toAddress(MainNetParams.get());
+
+        System.out.println("Address to use " + myAddress.toString());
+
+        List<ECKey> keys = new ArrayList<>();
+        keys.add(key);
+        List<BlockchainNetworkType> blockchainNetworkTypes = new ArrayList<>();
+        blockchainNetworkTypes.add(BlockchainNetworkType.PRODUCTION);
+        try {
+            this.fermatCryptoNetworkManager.monitorCryptoNetworkFromKeyList(CryptoVaults.FERMAT_CURRENCY, blockchainNetworkTypes, keys);
+        } catch (CantMonitorCryptoNetworkException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
