@@ -1,2 +1,2 @@
 
-include ':app', ':fermat-bch-plugin-crypto-network-fermat-bitdubai',':fermatj'
+include ':app', ':fermat-bch-plugin-crypto-network-fermat-bitdubai', ':fermatj', ':fermat-bch-plugin-crypto-vault-fermat-currency-bitdubai'
