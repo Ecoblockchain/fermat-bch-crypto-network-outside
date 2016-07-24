@@ -72,4 +72,10 @@ dependencies {
         exclude group: 'com.bitdubai.bch.api', module: 'fermat-bch-api'
         exclude group: 'com.bitdubai.fermat.api', module: 'fermat-api'
     }
+
+    compile (project(':fermat-bch-plugin-crypto-vault-fermat-currency-bitdubai')){
+        exclude group: 'com.bitdubai.bch.api', module: 'fermat-bch-api'
+        exclude group: 'com.bitdubai.fermat.api', module: 'fermat-api'
+        exclude group: 'com.bitdubai.fermat.pip.api', module: 'fermat-pip-api'
+    }
 }

@@ -29,6 +29,8 @@ dependencies {
             compile('com.bitdubai.fermat.api:fermat-api:2.0.11')
         }
     }
+    compile('com.bitdubai.fermat.pip.api:fermat-pip-api:1')
+
 
     //compile('com.bitdubai.fermat.pip.api:fermat-pip-api:2.0.11')
 

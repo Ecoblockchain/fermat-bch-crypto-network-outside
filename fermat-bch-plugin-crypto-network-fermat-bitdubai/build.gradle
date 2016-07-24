@@ -27,7 +27,6 @@ dependencies {
         dependencies {
             compile('com.bitdubai.fermat.api:fermat-api:2.0.11')
         }
-
     }
     compile project (':fermatj')
 //    compile('com.bitdubai.fermat.api:fermat-api:2.0.11')
