@@ -110,8 +110,7 @@ public class VaultKeyHierarchyMaintainer  implements Agent {
 
         @Override
         public void run() {
-            //switching off the fermat vault
-            isSupposedToRun = false;
+            isSupposedToRun = true;
             while (isSupposedToRun) {
                 try {
                     doTheMainTask();
@@ -243,7 +242,7 @@ public class VaultKeyHierarchyMaintainer  implements Agent {
                 /**
                  * the default network is always active, so I will add this.
                  */
-                blockchainNetworkTypes.add(BlockchainNetworkType.getDefaultBlockchainNetworkType());
+                blockchainNetworkTypes.add(BlockchainNetworkType.PRODUCTION);
             }
 
             return blockchainNetworkTypes;

@@ -3,10 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fermat-bch-crypto-network-outside.iml" filepath="$PROJECT_DIR$/fermat-bch-crypto-network-outside.iml" />
       <module fileurl="file://$PROJECT_DIR$/fermat-bch-plugin-crypto-network-fermat-bitdubai/fermat-bch-plugin-crypto-network-fermat-bitdubai.iml" filepath="$PROJECT_DIR$/fermat-bch-plugin-crypto-network-fermat-bitdubai/fermat-bch-plugin-crypto-network-fermat-bitdubai.iml" />
       <module fileurl="file://$PROJECT_DIR$/fermat-bch-plugin-crypto-vault-fermat-currency-bitdubai/fermat-bch-plugin-crypto-vault-fermat-currency-bitdubai.iml" filepath="$PROJECT_DIR$/fermat-bch-plugin-crypto-vault-fermat-currency-bitdubai/fermat-bch-plugin-crypto-vault-fermat-currency-bitdubai.iml" />
-      <module fileurl="file://$PROJECT_DIR$/fermatj.iml" filepath="$PROJECT_DIR$/fermatj.iml" />
-      <module fileurl="file://$PROJECT_DIR$/fermatj/fermatj-fermatj.iml" filepath="$PROJECT_DIR$/fermatj/fermatj-fermatj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fermatj/fermatj.iml" filepath="$PROJECT_DIR$/fermatj/fermatj.iml" />
     </modules>
   </component>
 </project>

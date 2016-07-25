@@ -74,8 +74,7 @@ import javax.annotation.Nullable;
 @PluginInfo(difficulty = PluginInfo.Dificulty.HIGH, maintainerMail = "acosta_rodrigo@hotmail.com", createdBy = "acostarodrigo", layer = Layers.CRYPTO_NETWORK, platform = Platforms.BLOCKCHAINS, plugin = Plugins.FERMAT_NETWORK)
 public class FermatCryptoNetworkPluginRoot
         extends AbstractPlugin
-        implements  TransactionSender<CryptoTransaction>,
-        BlockchainManager<ECKey, Transaction>,
+        implements  BlockchainManager<ECKey, Transaction>,
                     DatabaseManagerForDevelopers {
 
     @NeededAddonReference(platform = Platforms.PLUG_INS_PLATFORM   , layer = Layers.PLATFORM_SERVICE, addon = Addons.EVENT_MANAGER         )
@@ -168,7 +167,7 @@ public class FermatCryptoNetworkPluginRoot
         System.out.println("Fermat network started\n");
         System.out.println("***********************************\n");
 
-        testFermatNetwork();
+        //testFermatNetwork();
 
         /**
          * nothing left to do.

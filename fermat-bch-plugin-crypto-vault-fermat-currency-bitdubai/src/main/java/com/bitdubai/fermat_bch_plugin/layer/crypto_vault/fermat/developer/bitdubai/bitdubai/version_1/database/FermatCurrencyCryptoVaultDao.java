@@ -540,8 +540,8 @@ public class FermatCurrencyCryptoVaultDao  implements CryptoVaultDao {
          * I will manually save the default value
          */
         if (networkTypes.size() == 0){
-            this.setActiveNetworkType(BlockchainNetworkType.getDefaultBlockchainNetworkType());
-            networkTypes.add(BlockchainNetworkType.getDefaultBlockchainNetworkType());
+            this.setActiveNetworkType(BlockchainNetworkType.PRODUCTION);
+            networkTypes.add(BlockchainNetworkType.PRODUCTION);
         }
 
         return networkTypes;

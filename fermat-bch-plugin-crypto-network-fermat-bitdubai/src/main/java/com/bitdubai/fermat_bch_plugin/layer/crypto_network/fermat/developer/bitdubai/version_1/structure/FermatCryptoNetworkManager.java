@@ -40,7 +40,6 @@ import com.bitdubai.fermat_bch_api.layer.crypto_network.bitcoin.exceptions.CantM
 import com.bitdubai.fermat_bch_api.layer.crypto_network.bitcoin.exceptions.CantStoreBitcoinTransactionException;
 import com.bitdubai.fermat_bch_api.layer.crypto_network.bitcoin.exceptions.CantStoreTransactionException;
 import com.bitdubai.fermat_bch_api.layer.crypto_network.enums.Status;
-import com.bitdubai.fermat_bch_api.layer.crypto_network.manager.BlockchainManager;
 import com.bitdubai.fermat_bch_api.layer.crypto_vault.enums.CryptoVaults;
 import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitdubai.version_1.database.FermatCryptoNetworkDatabaseDao;
 import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitdubai.version_1.exceptions.CantExecuteDatabaseOperationException;
@@ -49,6 +48,7 @@ import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitd
 import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitdubai.version_1.util.FermatBlockchainProvider;
 import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitdubai.version_1.util.FermatTransactionConverter;
 import com.bitdubai.fermat_bch_plugin.layer.crypto_network.fermat.developer.bitdubai.version_1.util.TransactionProtocolData;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import org.apache.commons.lang.StringUtils;
@@ -180,7 +180,7 @@ public class FermatCryptoNetworkManager implements TransactionProtocolManager {
      *
      * @return
      */
-    private Wallet getWallet(BlockchainNetworkType blockchainNetworkType, @Nullable List<ECKey> keyList) throws UnreadableWalletException {
+    private Wallet getWallet(BlockchainNetworkType blockchainNetworkType, @Nullable List<ECKey>  keyList) throws UnreadableWalletException {
         Wallet wallet = null;
         walletFileName = CURRENCY + "_" + blockchainNetworkType.getCode();
         File walletFile = new File(WALLET_PATH, walletFileName);
@@ -204,7 +204,7 @@ public class FermatCryptoNetworkManager implements TransactionProtocolManager {
             Context context = new Context(NETWORK_PARAMETER);
 
             wallet = new Wallet(context);
-            wallet.importKeys(keyList);
+            wallet.importKeys(ImmutableList.copyOf(keyList));
 
             for (ECKey key : keyList){
                 wallet.addWatchedAddress(key.toAddress(NETWORK_PARAMETER));
